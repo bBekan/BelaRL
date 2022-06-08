@@ -12,7 +12,7 @@ Player player3 = new QBot { Name = "QBot2" };
 Player player4 = new Bot { Name = "Alg2" };
 
 
-for (int i = 0; i < 30000; i++)
+for (int i = 0; i < 125000; i++)
 {
     ((QBot)player1).SetGameNumber(i);
     ((QBot)player3).SetGameNumber(i);

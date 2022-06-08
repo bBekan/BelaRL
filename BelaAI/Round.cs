@@ -172,7 +172,8 @@ namespace BelaAI
                         teamWonCup = true;
                         pointsWon = cupWorth;
                     }
-                    pointsWon = -cupWorth;
+                    else
+                        pointsWon = -cupWorth;
                     kvp.Key.CalculateReward(wonCup, teamWonCup, pointsWon);
                 }
 

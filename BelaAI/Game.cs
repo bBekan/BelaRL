@@ -74,7 +74,7 @@ namespace BelaAI
                         qbotp.ChosenStatesInGame.Clear();
                     }
 
-                sw.Write(TotalUsScore +", " + pointsGained +  ", " + totalCalled + ", " + totalFail + ", " + totalThrown +  ", " + totalFlush + ", " + ((decimal) Math.Round((decimal)TotalUsScore/total, 3)).ToString(
+                sw.Write(TotalUsScore - TotalThemScore +", " + pointsGained +  ", " + totalCalled + ", " + totalFail + ", " + totalThrown +  ", " + totalFlush + ", " + ((decimal) Math.Round((decimal)pointsGained/total, 3)).ToString(
                 CultureInfo.CreateSpecificCulture("en-GB")) + ", " + total + ", "+ won + "\n");
             }
         }

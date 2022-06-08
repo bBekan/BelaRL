@@ -42,7 +42,7 @@ namespace BelaAI
             SetRemainingCards();
             if (Learn)
             {
-                Exploitation += (float)GameNumber / 30000;
+                Exploitation += (float)GameNumber / 135000;
 
                 Random rnd = new Random();
                 double db = rnd.NextDouble();
@@ -118,7 +118,6 @@ namespace BelaAI
             remaining.Remove(toPlay);
             Played.Add(toPlay);
 
-            int pos = Position == 3 ? 0 : 1;
             double bestValue = -100000000.0;
             Card bestCard = null;
             for(int i = 0; i < remaining.Count; i++)
@@ -126,7 +125,7 @@ namespace BelaAI
                 Card next = remaining[i];
 
                 string key = KeyFromState(currentWinning, next, Played);
-                var keyValue = (1 - LearningRate) * States[key] + LearningRate * (PossibleReward(next) + Discount * BestPossibleNext(next, pos, remaining, currentWinning));
+                var keyValue = (1 - LearningRate) * States[key] + LearningRate * (PossibleReward(next) + Discount * BestPossibleNext(next, 3 - Position, remaining, currentWinning));
                 if (keyValue > bestValue)
                 {
                     bestValue = keyValue;
